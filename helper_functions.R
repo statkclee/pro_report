@@ -1,3 +1,5 @@
+library(tidyverse)
+library(magick)
 
 create_cover_image <- function () {
   
@@ -10,27 +12,24 @@ create_cover_image <- function () {
   # Annotate base image
   text <- glue::glue("Tidyverse Korea + 한글")
   
-  # final <- magick::image_annotate(base_image, text, size = 60, color = "white",
-  #                                 degrees = 0,  location = "+150+330", font = "Noto Sans CJK SC")
+  final <- magick::image_annotate(base_image, text, size = 60, color = "white",
+                                  degrees = 0,  location = "+150+330", font = "AppleGothic")
 
-  final <- magick::image_annotate(base_image, text, size = 60, color = "white", location = "+150+330", font = "NanumGothic")
+  # final <- magick::image_annotate(base_image, text, size = 60, color = "white", location = "+150+330", font = "NanumGothic")
   
   return(final)
 }
 
-
 create_cover_image()
 
+# Windows is not working !!!
 # https://github.com/ropensci/magick/issues/96
 # library(extrafont)
 # loadfonts()
 # image_annotate(smpl_img, "청명한 봄하늘", size = 70, location = "+50+200", color = "green", font = "Courier")
-
-library(sysfonts)
-font_add("NanumGothic","C:/windows/fonts/NanumFont/NanumGothic.ttf")
-
-sysfonts::font.families()
-
-image_annotate(smpl_img, "청명한 봄하늘", size = 70, location = "+50+200", color = "green", font = "NanumGothic")
-
-plot(c(1:5), main="가나다")
+# library(sysfonts)
+# font_add("NanumGothic","C:/windows/fonts/NanumFont/NanumGothic.ttf")
+# 
+# sysfonts::font.families()
+# 
+# image_annotate(smpl_img, "청명한 봄하늘", size = 70, location = "+50+200", color = "green", font = "NanumGothic")
