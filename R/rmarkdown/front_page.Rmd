@@ -1,0 +1,17 @@
+---
+params:
+  branch: "default"
+---
+
+```{r setup-function}
+source(here::here("R/helper_functions.R"))
+```
+
+```{r initialize-parameters}
+# branch <- tools::toTitleCase(params$branch)
+```
+
+
+```{r, fig.height=13, fig.width=10, fig.align='center'}
+create_cover_image()
+```

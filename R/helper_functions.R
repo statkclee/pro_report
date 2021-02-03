@@ -20,7 +20,7 @@ create_cover_image <- function () {
   return(final)
 }
 
-create_cover_image()
+# create_cover_image()
 
 # Windows is not working !!!
 # https://github.com/ropensci/magick/issues/96
