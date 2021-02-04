@@ -16,10 +16,16 @@ library(tidyverse)
 
 # Set up connection to db -------------------------------------------------
 
-# db <- DBI::dbConnect(RSQLite::SQLite(), dbname="database/prod.sqlite")
+conn <- DBI::dbConnect(RSQLite::SQLite(), dbname = glue::glue("{here::here()}/database/report_database.sqlite"))
 
 
 # Get data to map over ----------------------------------------------------
+
+customer_input <- DBI::dbReadTable(conn = conn,
+                               name = "customer") %>%
+  dplyr::select(name) %>%
+  dplyr::distinct()
+
 
 # input_data <- DBI::dbReadTable(conn = db,
 #                                name = "financials") %>% 

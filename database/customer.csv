@@ -1,0 +1,11 @@
+|job|company|ssn|residence|current_location|blood_group|website|username|name|sex|address|mail|birthdate
+0|중식 주방장 및 조리사|(유) 류황김|540912-2888671|광주광역시 서구 학동가|(Decimal('-1.043840'), Decimal('-70.133151'))|AB+|['http://jusighoesa.kr/', 'http://ju.kr/', 'https://yu.com/', 'https://www.gweonbagi.net/']|gimeunju|윤민지|F|대구광역시 성북구 강남대65가|ojihye@gmail.com|2006-06-11
+1|주조기 조작원|최김|220506-1325759|경기도 안산시 삼성463거리 (민석하동)|(Decimal('-71.6336285'), Decimal('35.792658'))|A+|['http://gimjeongim.com/', 'http://gimgimseong.com/']|sineunji|곽민수|M|제주특별자치도 옥천군 반포대32가|fcoe@daum.net|1944-06-16
+2|농림어업관련 단순 종사원|유한회사 문|520208-2386148|강원도 보은군 테헤란거리 (동현김이리)|(Decimal('56.8378705'), Decimal('133.905294'))|AB-|['https://munseong.org/', 'https://ju.org/', 'https://ju.kr/']|igim|이서준|M|전라북도 청주시 상당구 강남대길 (영환이황마을)|jgang@daum.net|1980-08-22
+3|보험 심사원 및 사무원|유한회사 김배김|160728-2614811|서울특별시 성북구 선릉2로|(Decimal('-71.1187725'), Decimal('84.410495'))|AB-|['https://yuhanhoesa.com/']|jeongung20|박광수|M|제주특별자치도 계룡시 잠실거리 (정희김면)|eunyeong48@hanmail.net|1996-12-23
+4|금속가공관련 제어장치 조작원|(주) 박|530008-2169075|전라남도 구리시 잠실41가|(Decimal('-33.930248'), Decimal('-120.512735'))|O+|['https://yu.kr/', 'http://www.ju.net/', 'https://yuhanhoesa.org/', 'http://gimgimgang.net/']|minji02|권영희|F|전라북도 태안군 가락가|gimjeongho@daum.net|1968-06-29
+5|상점 판매원|고조남|830410-1897216|경기도 광명시 가락길|(Decimal('24.205595'), Decimal('113.664445'))|B-|['http://www.coejobaeg.org/', 'https://yuhanhoesa.com/', 'https://coebag.com/']|yeonghyi93|박은정|F|울산광역시 서구 테헤란로|seongjingim@hanmail.net|1971-06-30
+6|금속 / 재료공학 시험원|박이이|700418-2687343|인천광역시 관악구 잠실가 (건우김리)|(Decimal('9.638895'), Decimal('29.313781'))|AB-|['http://www.yu.kr/', 'http://bagi.kr/']|minyejun|김정숙|F|충청남도 수원시 팔달구 서초중앙로 (민지정리)|oryu@hotmail.com|1948-04-28
+7|산업전공|김성김|760928-1091279|대구광역시 노원구 삼성로 (아름장박동)|(Decimal('-2.8786685'), Decimal('91.031804'))|O-|['http://ganggweon.kr/', 'http://www.baego.kr/']|junseogang|장성호|M|세종특별자치시 관악구 언주31길 (정희김리)|sgim@dreamwiz.com|1934-11-19
+8|양장 및 양복 제조원|김손|890302-1719116|강원도 화성시 강남대00로 (정남박이읍)|(Decimal('10.308330'), Decimal('-19.023446'))|B-|['http://yu.com/']|wgim|고순옥|F|경상북도 옥천군 오금로 (경수서동)|hyeonju74@live.com|1938-07-08
+9|전자 부품 및 제품 제조 기계조작원|이강김|590015-1906611|울산광역시 용산구 석촌호수05로|(Decimal('10.322289'), Decimal('-124.766625'))|B+|['https://gimbaegson.kr/']|gimgeonu|백성훈|M|대구광역시 송파구 개포5거리|li@nate.com|1973-01-23

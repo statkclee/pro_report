@@ -10,7 +10,7 @@ create_cover_image <- function () {
     image_resize("1524x2000")
   
   # Annotate base image
-  text <- glue::glue("Tidyverse Korea + 한글")
+  text <- glue::glue("Tidyverse Korea + Korean")
   
   final <- magick::image_annotate(base_image, text, size = 60, color = "white",
                                   degrees = 0,  location = "+150+330", font = "AppleGothic")

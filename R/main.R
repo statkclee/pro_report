@@ -12,11 +12,12 @@ create_reports <- function(...) {
   
   rmarkdown::render(
     input = loc,
-    # output_file = paste0(current$branch, "_", this_year, "_", this_month ,".pdf"),
-    output_file = "report_ver_1.pdf",
+    output_file = paste0("report_", current$customer_name,".pdf"),
+    # output_file = "report_ver_1.pdf",
     output_dir = paste0("finished_reports"),
     intermediates_dir = glue::glue("{here::here()}/temp"),
-    clean = TRUE
+    clean = TRUE,
+    params = list(branch = current$customer_name)
   )
   
 }
@@ -27,7 +28,7 @@ maybe_create_reports <- purrr::possibly(.f = create_reports, otherwise = NULL)
 
 # Main iterator -----------------------------------------------------------
 
-maybe_create_reports()
+# maybe_create_reports()
 
-# input_data %>% 
-#   purrr::pwalk(maybe_create_reports)
+customer_input %>%
+  purrr::pwalk(maybe_create_reports)
