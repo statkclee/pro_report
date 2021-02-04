@@ -12,12 +12,12 @@ create_reports <- function(...) {
   
   rmarkdown::render(
     input = loc,
-    output_file = paste0("report_", current$customer_name,".pdf"),
+    output_file = paste0("report_", current$name,".pdf"),
     # output_file = "report_ver_1.pdf",
     output_dir = paste0("finished_reports"),
     intermediates_dir = glue::glue("{here::here()}/temp"),
     clean = TRUE,
-    params = list(branch = current$customer_name)
+    params = list(customer_name = current$name)
   )
   
 }
