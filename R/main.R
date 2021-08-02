@@ -12,14 +12,11 @@ create_reports <- function(...) {
   
   rmarkdown::render(
     input = loc,
-    output_file = paste0("report_", current$name,".pdf"),
-    # output_file = "report_ver_1.pdf",
     output_dir = paste0("finished_reports"),
+    output_file = glue::glue("bmi_report.pdf"),
     intermediates_dir = glue::glue("{here::here()}/temp"),
-    clean = TRUE,
-    params = list(customer_name = current$name)
+    clean = TRUE
   )
-  
 }
 
 # Wrap our fn in the possibly function, to catch errors

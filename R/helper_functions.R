@@ -1,35 +1,33 @@
 library(tidyverse)
 library(magick)
+library(extrafont)
+loadfonts()
 
 create_cover_image <- function () {
   
   # 책 표지: https://commons.wikimedia.org/wiki/File:Unknown,_Egypt,_14th_Century_-_Book_Binding_-_Google_Art_Project.jpg
   base_img_loc <- here::here("assets/cover.jpg")
+  logo_img_loc <- here::here("assets/logo.png")
   
-  base_image <- magick::image_read(base_img_loc) %>% 
+  base_image <- image_read(base_img_loc) %>% 
     image_resize("1524x2000")
+  logo_image <- image_read(logo_img_loc) %>% 
+    image_resize("200%")
   
   # Annotate base image
-  text <- glue::glue("Tidyverse Korea + Korean")
+  title_text  <- glue::glue("체질량지수(BMI) - R마크다운")
+  author_text <- glue::glue("R 사용자회")  
   
-  final <- magick::image_annotate(base_image, text, size = 60, color = "white",
-                                  degrees = 0,  location = "+150+330", font = "AppleGothic")
+  final <- base_image %>% 
+    image_annotate(title_text, size = 90, color = "white",
+                   degrees = 0,  location = "+100+330", font = "NanumGothic") %>% 
+    image_annotate(author_text, size = 80, color = "blue",
+                   degrees = 0,  location = "+500+1300", font = "NanumBarunpen") %>% 
+    image_composite(logo_image, offset = "+350+1600") %>% 
+    image_resize("40%")
 
-  # final <- magick::image_annotate(base_image, text, size = 60, color = "white", location = "+150+330", font = "NanumGothic")
-  
   return(final)
 }
 
-# create_cover_image()
+create_cover_image()
 
-# Windows is not working !!!
-# https://github.com/ropensci/magick/issues/96
-# library(extrafont)
-# loadfonts()
-# image_annotate(smpl_img, "청명한 봄하늘", size = 70, location = "+50+200", color = "green", font = "Courier")
-# library(sysfonts)
-# font_add("NanumGothic","C:/windows/fonts/NanumFont/NanumGothic.ttf")
-# 
-# sysfonts::font.families()
-# 
-# image_annotate(smpl_img, "청명한 봄하늘", size = 70, location = "+50+200", color = "green", font = "NanumGothic")
