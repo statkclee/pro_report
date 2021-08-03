@@ -27,5 +27,5 @@ maybe_create_reports <- purrr::possibly(.f = create_reports, otherwise = NULL)
 
 # maybe_create_reports()
 
-customer_input %>%
+gender_input %>%
   purrr::pwalk(maybe_create_reports)

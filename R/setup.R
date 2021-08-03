@@ -16,18 +16,14 @@ library(tidyverse)
 
 # Set up connection to db -------------------------------------------------
 
-conn <- DBI::dbConnect(RSQLite::SQLite(), dbname = glue::glue("{here::here()}/database/report_database.sqlite"))
+bmi_database <- DBI::dbConnect(RSQLite::SQLite(), dbname = glue::glue("{here::here()}/database/bmi_database.sqlite"))
 
 
-# Get data to map over ----------------------------------------------------
+# 성별 데이터 입력값 추출 ----------------------------------------------------
 
-customer_input <- DBI::dbReadTable(conn = conn,
-                               name = "customer") %>%
-  dplyr::select(name) %>%
+gender_input <- DBI::dbReadTable(conn = bmi_database,
+                                 name = "bmi") %>%
+  dplyr::select(Gender) %>%
   dplyr::distinct()
 
 
-# input_data <- DBI::dbReadTable(conn = db,
-#                                name = "financials") %>% 
-#   dplyr::select(branch) %>% 
-#   dplyr::distinct()

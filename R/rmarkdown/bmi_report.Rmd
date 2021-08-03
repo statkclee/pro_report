@@ -4,7 +4,6 @@ editor_options:
 mainfont: NanumGothic     
 ---
 
-
 # 비즈니스 설명 {#api-BMI}
 
 [캐글, "500 Person Gender-Height-Weight-Body Mass Index - Height and Weight random generated, Body Mass Index Calculated"](https://www.kaggle.com/yersever/500-person-gender-height-weight-bodymassindex)에서 데이터를 바탕으로 고객에게 체중과 키 정보만 제공하면 체질량 지수(Body Mass Index , BMI)를 예측하는 모형을 개발하여 고객이 궁금해하는 서비스를 개발하고자 한다.
@@ -51,7 +50,13 @@ mainfont: NanumGothic
 ```{r bmi-import}
 library(tidyverse)
 
-bmi_dat <- read_csv("https://raw.githubusercontent.com/statkclee/author_carpentry_kr/gh-pages/data/500_Person_Gender_Height_Weight_Index.csv")
+# bmi_dat <- read_csv("https://raw.githubusercontent.com/statkclee/author_carpentry_kr/gh-pages/data/500_Person_Gender_Height_Weight_Index.csv")
+
+# SQL 쿼리 --------
+statement <- glue::glue_sql("SELECT * from bmi", .con = bmi_database)
+                             
+bmi_dat <- DBI::dbGetQuery(conn = bmi_database,
+                           statement = statement)
 
 glimpse(bmi_dat)
 
