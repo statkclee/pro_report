@@ -69,8 +69,9 @@ prob_bmi <- reactive({
 renderText(glue::glue("- 극저체중: {round(prob_bmi()[,1] *100,2)} % 
                        - 저체중: {round(prob_bmi()[,2] *100,2)} %
                        - 정상: {round(prob_bmi()[,3] *100,2)} %
-                       - 비만: {round(prob_bmi()[,4] *100,2)} %
-                       - 고도비만: {round(prob_bmi()[,5] *100,2)} %"))
+                       - 과체중: {round(prob_bmi()[,4] *100,2)} %
+                       - 비만: {round(prob_bmi()[,5] *100,2)} %
+                       - 고도비만: {round(prob_bmi()[,6] *100,2)} %"))
 ```
 
    
