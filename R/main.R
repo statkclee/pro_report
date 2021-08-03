@@ -13,9 +13,10 @@ create_reports <- function(...) {
   rmarkdown::render(
     input = loc,
     output_dir = paste0("finished_reports"),
-    output_file = glue::glue("bmi_report.pdf"),
+    output_file = glue::glue("{current$Gender}_bmi_report.pdf"),
     intermediates_dir = glue::glue("{here::here()}/temp"),
-    clean = TRUE
+    clean = TRUE,
+    params = list(gender = current$Gender)
   )
 }
 
@@ -25,7 +26,10 @@ maybe_create_reports <- purrr::possibly(.f = create_reports, otherwise = NULL)
 
 # Main iterator -----------------------------------------------------------
 
-# maybe_create_reports()
+# gender_input %>%
+#   purrr::pwalk(create_reports)
 
 gender_input %>%
   purrr::pwalk(maybe_create_reports)
+
+

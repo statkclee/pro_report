@@ -7,9 +7,7 @@ geometry: margin=1.9cm
 mainfont: NanumGothic # Lucida Grande for Mac, Calibri for Windows, Use Ubuntu as mainfont if on Ubuntu-based linux, same idea for Mac
 
 params:
-  branch: "default"
-  month: "default"
-  year: "default"
+  gender: "Male"
 
 header-includes:
 - \usepackage{pdflscape}
@@ -47,7 +45,12 @@ knitr::opts_chunk$set(
 
 \newpage
 
-
 ```{r child = here::here("R/rmarkdown/bmi_report.Rmd")}
+```
+
+\newpage
+
+
+```{r child = here::here("R/rmarkdown/back.Rmd")}
 ```
 

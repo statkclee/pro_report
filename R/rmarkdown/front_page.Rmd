@@ -1,13 +1,17 @@
 ---
 params:
-  branch: "default"
+  gender: "Male"
 ---
 
 ```{r setup-function}
 source(here::here("R/helper_functions.R"))
 ```
 
+```{r gender-input}
+gender <- tools::toTitleCase(params$gender)
+```
 
-```{r, fig.height=13, fig.width=10, fig.align='center'}
-create_cover_image()
+
+```{r front-cover, fig.align='center', message=FALSE, warning=FALSE, out.height="100%", out.width="100%", paged.print=TRUE}
+create_cover_image(gender = gender)
 ```

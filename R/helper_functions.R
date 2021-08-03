@@ -3,7 +3,7 @@ library(magick)
 library(extrafont)
 loadfonts()
 
-create_cover_image <- function () {
+create_cover_image <- function (gender) {
   
   # 책 표지: https://commons.wikimedia.org/wiki/File:Unknown,_Egypt,_14th_Century_-_Book_Binding_-_Google_Art_Project.jpg
   base_img_loc <- here::here("assets/cover.jpg")
@@ -16,14 +16,14 @@ create_cover_image <- function () {
   
   # Annotate base image
   title_text  <- glue::glue("체질량지수(BMI) - R마크다운")
-  subtitle_text <- glue::glue("데이터베이스 도입")
+  subtitle_text <- glue::glue("데이터베이스 + {gender}")
   author_text <- glue::glue("R 사용자회")  
   
   final <- base_image %>% 
     image_annotate(title_text, size = 90, color = "white",
                    degrees = 0,  location = "+100+330", font = "NanumGothic") %>% 
-    image_annotate(subtitle_text, size = 50, color = "black",
-                   degrees = 0,  location = "+500+530", font = "NanumGothic") %>% 
+    image_annotate(subtitle_text, size = 50, color = "green",
+                   degrees = 0,  location = "+300+530", font = "NanumGothic") %>% 
     image_annotate(author_text, size = 80, color = "blue",
                    degrees = 0,  location = "+500+1300", font = "NanumBarunpen") %>% 
     image_composite(logo_image, offset = "+350+1600") %>% 
@@ -32,5 +32,5 @@ create_cover_image <- function () {
   return(final)
 }
 
-create_cover_image()
+# create_cover_image(gender = "Male")
 
